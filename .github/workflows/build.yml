@@ -29,12 +29,4 @@ jobs:
         with:
           name: BowlingCalculator
           path: dist/BowlingCalculator.exe
-
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: build-${{ github.run_number }}
-          name: "Build #${{ github.run_number }}"
-          files: dist/BowlingCalculator.exe
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          retention-days: 30
